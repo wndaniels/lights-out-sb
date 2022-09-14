@@ -27,7 +27,7 @@ import "./Board.css";
  *
  **/
 
-function Board({ nrows = 3, ncols = 3, chanceLightStartsOn = 0.25 }) {
+function Board({ nrows = 5, ncols = 5, chanceLightStartsOn = 0.25 }) {
   const [board, setBoard] = useState(createBoard());
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
@@ -74,7 +74,11 @@ function Board({ nrows = 3, ncols = 3, chanceLightStartsOn = 0.25 }) {
   // if the game is won, just show a winning msg & render nothing else
 
   if (hasWon()) {
-    return <div>You Win!</div>;
+    return (
+      <div>
+        <h2>You Win!</h2>
+      </div>
+    );
   }
 
   let tblBoard = [];
